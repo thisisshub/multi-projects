@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "blogs",
+    "jwt_app",
     "payment",
     "resumemaker"
 ]
@@ -134,3 +135,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CURRENCY = os.getenv("CURRENCY")
 RAZOR_KEY_ID = os.getenv("RAZOR_KEY_ID")
 RAZOR_KEY_SECRET = os.getenv("RAZOR_KEY_SECRET")
+
+REST_FRAMEWORK = { 
+    'DEFAULT_AUTHENTICATION_CLASSES': [ 
+        'rest_framework_simplejwt.authentication.JWTAuthentication', 
+    ], 
+} 
